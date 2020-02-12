@@ -1,17 +1,18 @@
 const playwright = require('playwright');
 
-const args = {
-    chromium: ["--no-sandbox", "--disable-setuid-sandbox"],
-    firefox: [],
-    webkit: []
-}
+// const args = {
+//     chromium: ["--no-sandbox", "--disable-setuid-sandbox"],
+//     firefox: [],
+//     webkit: []
+// }
 
 (async () => {
-    for (const browserType of ['chromium', 'firefox', 'webkit']) {
+    // for (const browserType of ['chromium', 'firefox', 'webkit']) {
+        const browserType = 'chromium'
         console.log('attempting', browserType)
         const browser = await playwright[browserType].launch({
             dumpio: true,
-            args: args[browserType] 
+            args: ['--no-sandbox']
         });
 
         const context = await browser.newContext();
@@ -27,5 +28,5 @@ const args = {
         console.log(dimensions);
 
         await browser.close();
-    }
+    // }
 })();

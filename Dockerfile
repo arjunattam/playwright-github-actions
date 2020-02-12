@@ -1,8 +1,6 @@
-# Container image that runs your code
 FROM node:12.15-buster
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
+COPY libjpeg.sh /libjpeg.sh
 COPY test.js /test.js
 
 RUN apt-get update && \
@@ -14,13 +12,13 @@ RUN apt-get update && \
     libappindicator1 libnss3 lsb-release xdg-utils wget \
     # For (newer) chromium
     libgbm1 \
-    # Webkit
-    libseccomp2 woff2 libopus0
+    # WebKit
+    libseccomp2 woff2 libopus0 libegl1 libgles2 libgudev-1.0-0
 
-RUN apt-get install vim
+RUN sh libjpeg.sh
+
+RUN apt-get install -y vim
 
 RUN npm install playwright
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-# ENTRYPOINT ["/entrypoint.sh"]
 ENTRYPOINT /bin/sh
