@@ -14,4 +14,4 @@ const playwright = require("playwright");
     })
     console.log(dims);
     await browser.close();
-})
+})();
