@@ -3,7 +3,7 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Try playwright
     steps:
     - name: Hello world action step
       id: hello
@@ -13,6 +13,9 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
     - run: cd test && npm install
+    - uses: arjun27/playwright-github-actions@master
+      with:
+        args: node index.js
     # - name: Try playwright
     #   run: |
     #       cd $GITHUB_WORKSPACE/test |

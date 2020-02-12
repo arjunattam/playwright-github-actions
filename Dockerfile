@@ -17,8 +17,6 @@ RUN apt-get update && \
 
 RUN sh libjpeg.sh
 
-RUN apt-get install -y vim
+# RUN apt-get install -y vim
 
-RUN npm install playwright
-
-ENTRYPOINT /bin/sh
+# RUN npm install playwright
