@@ -15,7 +15,10 @@ jobs:
     - run: cd test && npm install
     - uses: arjun27/playwright-github-actions@master
       with:
-        args: node test/index.js
+        args: cd test && npm i
+    - uses: arjun27/playwright-github-actions@master
+      with:
+        args: cd test && node index.js
     # - name: Try playwright
     #   run: |
     #       cd $GITHUB_WORKSPACE/test |
