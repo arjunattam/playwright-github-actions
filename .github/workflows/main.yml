@@ -10,10 +10,11 @@ jobs:
       uses: actions/hello-world-javascript-action@v1
       with:
         who-to-greet: 'Mona the Octocat'
-    - name: Checkout
-      uses: actions/checkout@master
-    - name: Try playwright
-      run: |
-          cd $GITHUB_WORKSPACE/test |
-          npm install |
-          ls -alh
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+    - run: npm install
+    # - name: Try playwright
+    #   run: |
+    #       cd $GITHUB_WORKSPACE/test |
+    #       npm install |
+    #       ls -alh
