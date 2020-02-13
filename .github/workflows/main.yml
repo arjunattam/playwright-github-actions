@@ -10,5 +10,6 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
     - run: "echo $HOME"
-    - run: "echo $UID"
+    - run: "stat $HOME"
+    - run: "id"
     - run: cd test-project && npm install && node index.js
