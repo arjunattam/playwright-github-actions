@@ -12,4 +12,5 @@ jobs:
     - run: "echo $HOME"
     - run: "stat $HOME"
     - run: "id"
+    - run: "npm i -g yarn"
     - run: cd test-project && npm install && node index.js
