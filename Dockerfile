@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 
 RUN apt-get update && apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
-    apt-get install -y nodejs
+    apt-get install -y nodejs yarn
 
 # Install browser deps, starting with webkit
 RUN apt-get install -y libwoff1 \
