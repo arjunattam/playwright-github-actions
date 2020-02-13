@@ -1,8 +1,8 @@
 //@ts-check
 const playwright = require("playwright");
 
-(async () => {
-    const browser = await playwright.chromium.launch({ dumpio: true, args: ['--no-sandbox']});
+async function run(name, args) {
+    const browser = await playwright.chromium.launch({ dumpio: true, args });
     const context = await browser.newContext();
     const page = await context.newPage('http://example.com');
 
@@ -12,6 +12,12 @@ const playwright = require("playwright");
             h: document.documentElement.clientHeight
         }
     })
-    console.log(dims);
+    console.log(name, dims);
     await browser.close();
+}
+
+(async () => {
+    await run('chromium', ['--no-sandbox']);
+    await run('webkit', []);
+    await run('firefox', []);
 })();
