@@ -1,21 +1,30 @@
-FROM node:12.15-buster
+FROM ubuntu:bionic
 
-COPY libjpeg.sh /libjpeg.sh
-COPY test.js /test.js
+RUN apt-get update && apt-get install -y curl && \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    apt-get install -y nodejs
 
-RUN apt-get update && \
-    apt-get install -y gconf-service libasound2 libatk1.0-0 libatk-bridge2.0-0 libc6 \
-    libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 \
-    libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 \
-    libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 \
-    libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation \
-    libappindicator1 libnss3 lsb-release xdg-utils wget \
-    # For (newer) chromium
-    libgbm1 \
-    # WebKit
-    libseccomp2 woff2 libopus0 libegl1 libgles2 libgudev-1.0-0
-
-RUN sh libjpeg.sh
-
-# RUN apt-get install -y vim
-# RUN npm install playwright
+# Install browser deps, starting with webkit
+RUN apt-get install -y libwoff1 \
+                       libopus0 \
+                       libwebp6 \
+                       libwebpdemux2 \
+                       libenchant1c2a \
+                       libgudev-1.0-0 \
+                       libsecret-1-0 \
+                       libhyphen0 \
+                       libgdk-pixbuf2.0-0 \
+                       libegl1 \
+                       libnotify4 \
+                       libxslt1.1 \
+                       libevent-2.1-6 \
+                       libgles2 \
+                       libgl1 \
+                       libegl1 \
+                       # for chromium
+                       libnss3 \
+                       libxss1 \
+                       libasound2 \
+                       # for firefox
+                       libdbus-glib-1-2 \
+                       libxt6

@@ -1,30 +1,12 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  e2e_test_job:
     runs-on: ubuntu-latest
     container:
       image: arjun27/playwright-bionic:0.1.0
     name: Try playwright
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: actions/hello-world-javascript-action@v1
-      with:
-        who-to-greet: 'Mona the Octocat'
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
-    - run: cd test && npm install && node index.js
-    # - run: ls -alh /github/workspace
-    # - uses: arjun27/playwright-github-actions@master
-    #   with:
-    #     args: cd test && npm i
-    # - uses: arjun27/playwright-github-actions@master
-    #   with:
-    #     args: cd test && node index.js
-
-    # - name: Try playwright
-    #   run: |
-    #       cd $GITHUB_WORKSPACE/test |
-    #       npm install |
-    #       ls -alh
+    - run: cd test-project && npm install && node index.js
