@@ -16,7 +16,7 @@ async function run(name, args) {
 }
 
 (async () => {
-    await run('chromium', ['--no-sandbox']);
+    await run('chromium', []);
     await run('webkit', []);
-    await run('firefox', ['--no-sandbox']);
+    await run('firefox', []);
 })();
