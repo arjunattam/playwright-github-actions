@@ -21,6 +21,15 @@ jobs:
     - run: npm install && npm test
 ```
 
+### Browsers
+
+The container installs system dependencies for the 3 browsers and relies on Playwright to install browsers during npm install.
+
+To use the browsers in your tests, please use the following configuration:
+
+* Chromium: Use the `--no-sandbox` arg while launching it
+* WebKit and Firefox: No additional config
+
 ## Contributing
 
 Let us know if this example works for your requirements. File an issue!
