@@ -2,7 +2,7 @@
 const playwright = require("playwright");
 
 async function run(name, args) {
-    const browser = await playwright[name].launch({ dumpio: true, args });
+    const browser = await playwright[name].launch({ args });
     const context = await browser.newContext();
     const page = await context.newPage('http://example.com');
 
