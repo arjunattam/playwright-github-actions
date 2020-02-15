@@ -3,8 +3,8 @@ const playwright = require("playwright");
 
 async function run(name, args) {
     const browser = await playwright[name].launch({ args });
-    const context = await browser.newContext();
-    const page = await context.newPage('http://example.com');
+    const page = await browser.newPage();
+    await page.goto('http://example.com');
 
     console.log(name, await page.evaluate(() => {
         return {
