@@ -1,6 +1,6 @@
 # Playwright on GitHub Actions
 
-Example project that runs Playwright tests on GitHub Actions.
+Example project that runs Playwright tests on GitHub Actions. Tested with Playwright v0.11.1.
 
 ## Usage
 
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: arjun27/playwright-bionic:0.1.1
+      image: arjun27/playwright-bionic:0.2.0
 
     name: Try playwright
     steps:
