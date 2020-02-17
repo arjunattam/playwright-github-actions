@@ -21,11 +21,11 @@ RUN apt-get install -y libwoff1 \
                        libgles2 \
                        libgl1 \
                        libegl1 \
+                       libvpx5 \
                        # for chromium
                        libnss3 \
                        libxss1 \
                        libasound2 \
-                       libvpx5 \
                        # for firefox
                        libdbus-glib-1-2 \
                        libxt6
