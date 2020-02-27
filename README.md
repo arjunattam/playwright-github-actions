@@ -11,8 +11,7 @@ jobs:
   e2e_test_job:
     runs-on: ubuntu-latest
 
-    container:
-      image: arjun27/playwright-bionic:0.2.0
+    container: arjun27/playwright-bionic:0.2.0
 
     name: Try playwright
     steps:
