@@ -20,7 +20,6 @@ RUN apt-get install -y libwoff1 \
                        libevent-2.1-6 \
                        libgles2 \
                        libgl1 \
-                       libegl1 \
                        libvpx5 \
                        # for chromium
                        libnss3 \
