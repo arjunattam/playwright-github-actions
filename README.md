@@ -1,6 +1,6 @@
 # Playwright on GitHub Actions
 
-Example project that runs Playwright tests on GitHub Actions. Tested with Playwright v0.11.1.
+Example project that runs Playwright tests on GitHub Actions. Tested with Playwright v0.12.1.
 
 ## Usage
 
@@ -15,9 +15,9 @@ jobs:
 
     name: Try playwright
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-    - run: npm install && npm test
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install && npm test
 ```
 
 ### Browsers
@@ -26,8 +26,8 @@ The container installs system dependencies for the 3 browsers and relies on Play
 
 To use the browsers in your tests, please use the following configuration:
 
-* Chromium: Use the `--no-sandbox` arg while launching it
-* WebKit and Firefox: No additional config
+- Chromium: Use the `--no-sandbox` arg while launching it
+- WebKit and Firefox: No additional config
 
 ## Contributing
 
