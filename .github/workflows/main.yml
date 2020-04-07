@@ -9,9 +9,9 @@ jobs:
     - uses: actions/setup-node@v1
     - name: install required packages
       run: |
-        sudo apt-get update
-        sudo apt-get install libgbm-dev
-        sudo apt-get install libwoff1 libopus0 libwebp6 libwebpdemux2 libenchant1c2a libgudev-1.0-0 libsecret-1-0 libhyphen0 libgdk-pixbuf2.0-0 libegl1 libgles2 libevent-2.1-6 libnotify4 libxslt1.1
+        apt-get update
+        apt-get install libgbm-dev
+        apt-get install libwoff1 libopus0 libwebp6 libwebpdemux2 libenchant1c2a libgudev-1.0-0 libsecret-1-0 libhyphen0 libgdk-pixbuf2.0-0 libegl1 libgles2 libevent-2.1-6 libnotify4 libxslt1.1
     - run: "echo $HOME"
     - run: "stat $HOME"
     - run: "id"
