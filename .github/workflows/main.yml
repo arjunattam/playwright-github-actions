@@ -2,12 +2,15 @@ on: [push]
 
 jobs:
   e2e_test_job:
-    runs-on: ubuntu-latest
-    container: aslushnikov/playwright:bionic
     name: Try playwright
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
+    - name: install required packages
+      run: |
+        sudo apt-get update
+        sudo apt-get install libgbm-dev
     - run: "echo $HOME"
     - run: "stat $HOME"
     - run: "id"
