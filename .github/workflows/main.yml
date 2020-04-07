@@ -3,7 +3,7 @@ on: [push]
 jobs:
   e2e_test_job:
     runs-on: ubuntu-latest
-    container: arjun27/playwright-bionic:0.2.0
+    container: aslushnikov/playwright:bionic
     name: Try playwright
     steps:
     - uses: actions/checkout@v2
