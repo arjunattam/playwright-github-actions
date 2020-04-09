@@ -1,5 +1,7 @@
 # Playwright on GitHub Actions
 
+**This repo has been archived**: Please look at [microsoft/playwright-github-action](https://github.com/microsoft/playwright-github-action) instead.
+
 Example project that runs Playwright tests on GitHub Actions. Tested with Playwright v0.12.1.
 
 ## Usage
